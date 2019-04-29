@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<script>
+    String.prototype.filterWords = function(){
+        const banned = arguments;
+        const str = this.valueOf().split(" ");
+        let blocked = str.map((word,index,str)=>{
+            if (banned.includes(word)) return "***";
+            else return word;
+        });
+        return blocked;
+    }
+
+</script>
+<body>
+
+</body>
+</html>
