@@ -78,7 +78,15 @@ String.prototype.filterWordsUsingObservables = function (args) {
     }
     if(applyCoupon(item)(10).price ===180) console.log("Working")
 
-    //Exercise 3 CHeck
+    //Exercise 3 CHeck if it's weekend or weekday
+
+    const weekend = ['weekend','weekday','weekday','weekday','weekday','weekday','weekend'];
+    function isWeekend(){
+        const today = new Date();
+        const day = today.getDay();
+        setTimeout((day)=>console.log(weekend[day]),1000,day);
+    }
+    isWeekend();
 
 </script>
 <body>
