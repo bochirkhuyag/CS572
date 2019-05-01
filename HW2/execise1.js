@@ -25,12 +25,12 @@
 Array.prototype.even = function(){
     setTimeout((result)=>{
         console.log(result);
-    }, 500,this.filter(num=>num%2==0));
+    }, 500, this.filter(num=>num%2==0));
 }
 Array.prototype.odd = function(){
     setTimeout((result)=>{
         console.log(result);
-    }, 500,this.filter(num=>num%2!=0));
+    }, 500, this.filter(num=>num%2!=0));
 }
 
 console.log("start");
