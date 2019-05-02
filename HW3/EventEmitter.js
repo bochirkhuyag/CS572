@@ -34,10 +34,36 @@ const fs = require('fs');
 const path = require('path');
 const http = require('http');
 console.log("Start time :"+new Date().getTime());
-const readable = fs.readFileSync(path.join(__dirname,'calma.mp4'));
+
+//using readFIleSync
+//const readable = fs.readFileSync(path.join(__dirname,'calma.mp4'));
+
+//using readfile
+
+/*
 http.createServer((req,res)=>{
+
+	let readable;
+	fs.readFile(path.join(__dirname,'calma.mp4'),function(err,data){
+		if(err) throw err;
+		readable = data;
+	});
+
+	res.writeHead(200,{'Content-Type':'video/mp4'});
+	res.end(readable);
+	console.log("End time :"+new Date().getTime());
+}).listen(4000);
+*/
+
+//using stream
+
+http.createServer((req,res)=>{
+    let readStream = fs.createReadStream(path.join(__dirname,'calma.mp4'));
+
+    readStream.on('open',function(){
+        readStream.pipe(res);
+    });
     res.writeHead(200,{'Content-Type':'video/mp4'});
-    res.end(readable);
     console.log("End time :"+new Date().getTime());
 }).listen(4000);
 
