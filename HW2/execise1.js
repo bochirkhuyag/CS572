@@ -42,7 +42,7 @@ console.log("end");
 1.order of execution between setImmediate(callback) and setTimout(callback, 0)
 is varying depending on performance and which phase event loop is executing.
 However inside I/O operation setImeddiate always runs first because setImmediate runs at
-check phase which is after poll.
+check phase which is after poll phase.
 2. process.nextTick is runs before any other phases it's not actually part of event loop it's c++ handler
 which is checked after every phase of event loop.
 3. Node built in modules
