@@ -1,0 +1,23 @@
+GET http://localhost:4000/lectures HTTP/1.1
+
+###
+
+//Add request
+POST http://localhost:4000/lectures HTTP/1.1
+content-type: application/json
+
+{
+    "course": "WAA",
+    "lecture": [
+      "Introduction to ECMA6, Async, Promise, Observables",
+      "Introduction to Node and V8, The Event Loop",
+      "Modules, Events Buffers, Streams, Files, Reactive Web Server"
+    ]
+  }
+
+  ###
+
+  DELETE http://localhost:4000/lectures/5cd23198a13ea9520cc7bcba HTTP/1.1
+  
+
+

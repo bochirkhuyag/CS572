@@ -1,13 +1,13 @@
 const dns = require("dns");
 const util = require("util");
-/*
+
 dns.resolve4('www.mum.edu',(err,address)=>{
     if(err) throw err;
     console.log(`addresses: ${address}`);
 })
-*/
+
 const dnsResolve4Async = util.promisify(dns.resolve4)
-//dnsResolve4Async('www.mum.edu').then(result => console.log(result))
+dnsResolve4Async('www.mum.edu').then(result => console.log(result))
 
 
 async function getAddress(){
@@ -15,7 +15,6 @@ async function getAddress(){
     console.log(address);
 }
 //getAddress();
-
 
 const eventEmitter = require('events')
 class Gym extends eventEmitter{
@@ -26,6 +25,8 @@ class Gym extends eventEmitter{
         this.emit('boom',str);
     }
 }
+
+
 var gym = new Gym();
 gym.on('boom',(text)=> {setInterval(()=>console.log(text),1000)});
 //gym.boom("Athlete is working out");
