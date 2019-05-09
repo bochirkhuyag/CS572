@@ -1,0 +1,24 @@
+LIBRARY
+
+BOOK {
+_ID : '',
+ISBN : '',
+AUTHOR : '',
+TAGS : [ '','',''],
+BORROW : [
+	{
+	 Student_NAME :'',
+	 DUE_DATE :''
+	},
+	{
+	 STUDENT_NAME: '',
+	 DUE_DATE : ''
+	}
+	],
+Available : 100
+}
+
+
+index TAGS
+index AUTHOR
+index TAGS,AUTHOR
