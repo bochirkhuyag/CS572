@@ -60,11 +60,11 @@ http.createServer((req,res)=>{
 
 http.createServer((req,res)=>{
     let readStream = fs.createReadStream(path.join(__dirname,'calma.mp4'));
-
+    res.writeHead(200,{'Content-Type':'video/mp4'});
+    readStream.pipe(res);
     readStream.on('open',function(){
         readStream.pipe(res);
     });
-    res.writeHead(200,{'Content-Type':'video/mp4'});
     console.log("End time :"+new Date().getTime());
 }).listen(4000);
 
